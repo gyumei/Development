@@ -32,6 +32,26 @@ Route::get('/dashboard', function () {
 Route::get('/posts', function() {
     return Inertia::render('Post/Index');
 });
+Route::get('/debate', function() {
+    return Inertia::render('Post/Debate');
+});
+
+Route::get('/follow', function() {
+    return Inertia::render('Post/Follow');
+});
+
+Route::get('/followers', function() {
+    return Inertia::render('Post/Follower');
+});
+
+Route::get('/profiele', function() {
+    return Inertia::render('Post/Profiele');
+});
+
+Route::get('/like', function() {
+    return Inertia::render('Post/Like');
+});
+
 
 
 Route::middleware('auth')->group(function () {
