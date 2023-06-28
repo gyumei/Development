@@ -10,10 +10,10 @@ const Index = (props) => {
             <nav>
                 <ul class="sm:flex md:flex justify-end md:space-x-16 pr-8 text-green-800">
                     <li><a href="/profiele">プロフィール</a></li>
-                    <li><a href="follow">フォロー中</a></li>
-                    <li><a href="follower">フォロワー</a></li>
-                    <li><a href="like">お気に入り</a></li>
-                    <li><a href="debate">論議場</a></li>
+                    <li><a href="/follow">フォロー中</a></li>
+                    <li><a href="/follower">フォロワー</a></li>
+                    <li><a href="/like">お気に入り</a></li>
+                    <li><a href="/debate">論議場</a></li>
                 </ul>
             </nav>
         </header>
