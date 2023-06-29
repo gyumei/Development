@@ -6,14 +6,18 @@ const Index = (props) => {
     return (
         <>
         <header class="md:flex justify-between bg-black p-24">
-            <h1 class="pl-8">ロゴ</h1>
+            <div class="text-4xl font-bold text-green-800 pl-2">
+                  <a href="/posts">Collision</a>
+                </div>
             <nav>
                 <ul class="sm:flex md:flex justify-end md:space-x-16 pr-8 text-green-800">
                     <li><a href="/profiele">プロフィール</a></li>
-                    <li><a href="follow">フォロー中</a></li>
-                    <li><a href="follower">フォロワー</a></li>
-                    <li><a href="like">お気に入り</a></li>
-                    <li><a href="debate">論議場</a></li>
+                    <li><a href="/follow">フォロー中</a></li>
+                    <li><a href="/follower">フォロワー</a></li>
+                    <li><a href="/like">お気に入り</a></li>
+                    <li><a href="/debate">論議場</a></li>
+                    <li><a href="/debate">Google認証</a></li>
+                    <li><a href="/debate">Twitter認証</a></li>
                 </ul>
             </nav>
         </header>
