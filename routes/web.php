@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +30,13 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get('/posts', function() {
-    return Inertia::render('Post/Index');
-});
+Route::get('/index', [PostController::class, 'index'])->name('index');
+
 Route::get('/debate', function() {
     return Inertia::render('Post/Debate');
 });
+
+Route::get("/personal/{user}", [PostController::class, "personal"]);
 
 Route::get('/follow', function() {
     return Inertia::render('Post/Follow');
