@@ -1,42 +1,49 @@
 import React from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
+import { Link } from '@inertiajs/react';
+import Header from '@/Components/Post/Header'
 
-const Index = (props) => {
+const Profiele = (props) => {
     
     return (
         <>
-        <header class="md:flex justify-between bg-black p-24">
-            <h1 class="pl-8">ロゴ</h1>
-            <nav>
-                <ul class="sm:flex md:flex justify-end md:space-x-16 pr-8 text-green-800">
-                    <li><Link href="/profiele">プロフィール</Link></li>
-                    <li><a href="/follow">フォロー中</a></li>
-                    <li><a href="/follower">フォロワー</a></li>
-                    <li><a href="/like">お気に入り</a></li>
-                    <li><a href="/debate">論議場</a></li>
-                </ul>
-            </nav>
-        </header>
-        <div class="bg-red-800 h-96">
-          <div class="text-6xl text-center font-bold text-grey-800 pt-48">
-            <p>Collision</p>
+        <Header auth={props.auth}>
+           Collisions
+        </Header>
+        <div class="bg-grey-500 pb-6 sm:pb-8 lg:pb-12">
+          <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+          
+            <section class="flex flex-col justify-between gap-6 sm:gap-10 md:gap-16 lg:flex-row">
+        
+              <div class="flex ml-48 flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
+              
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">名前: </p>
+        
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">年齢: </p>
+                
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">メールアドレス: </p>
+                
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">趣味: </p>
+                
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">興味のあるトピック: </p>
+                
+                <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
+                  <a href="/profiele/enroll" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">登録</a>
+        
+                  <a href="#" class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">編集</a>
+              </div>
+              
+              </div>
+        
+              <div class="h-48 my-16 overflow-hidden rounded-lg bg-gray-100 shadow-lg lg:h-auto xl:w-5/12">
+                <img src="https://images.unsplash.com/photo-1618004912476-29818d81ae2e?auto=format&q=75&fit=crop&w=1000" loading="lazy" alt="Photo by Fakurian Design" class="h-full w-full object-cover object-center" />
+              </div>
+            </section>
           </div>
         </div>
-    <div class="bg-white py-6 sm:py-8 lg:py-12">
-
-      <div>
-        <a href="" class="group relative flex h-96 items-end overflow-hidden rounded-lg bg-gray-100 p-4 shadow-lg">
-          <img src="https://images.unsplash.com/photo-1560269999-cef6ebd23ad3?auto=format&q=75&fit=crop&w=600&h=700" loading="lazy" alt="Photo by Austin Wade" class="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
-
-          <div class="relative flex w-full flex-col rounded-lg bg-white p-4 text-center">
-            <span class="text-gray-500">Women</span>
-            <span class="text-lg font-bold text-gray-800 lg:text-xl">Sale</span>
-          </div>
-        </a>
-      </div>
-</div>
-</>
+        </>
         );
 }
 
-export default Index;
+export default Profiele;
+

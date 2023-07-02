@@ -18,4 +18,9 @@ class PostController extends Controller
     {
         return Inertia::render("Post/Personal", ["user" => $user]);
     }
+    
+    public function profiele_enroll()
+    {
+        return Inertia::render("Post/Profiele_enroll");
+    }
 }
