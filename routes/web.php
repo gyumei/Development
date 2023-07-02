@@ -32,7 +32,15 @@ Route::get('/dashboard', function () {
 
 Route::get('/index', [PostController::class, 'index'])->name('index');
 
-Route::get('/debate', function() {
+
+
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    
+    Route::get('/debate', function() {
     return Inertia::render('Post/Debate');
 });
 
@@ -50,17 +58,12 @@ Route::get('/profiele', function() {
     return Inertia::render('Post/Profiele');
 });
 
+Route::get("/profiele/enroll", [PostController::class, "profiele_enroll"]);
+
+
 Route::get('/like', function() {
     return Inertia::render('Post/Like');
 });
-
-
-
-
-Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 require __DIR__.'/auth.php';
