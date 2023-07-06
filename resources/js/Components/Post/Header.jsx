@@ -29,6 +29,6 @@ export default function Header({auth, children}) {
                 </ul>
             </nav>
         </header>
-            )
+    )
 }
 

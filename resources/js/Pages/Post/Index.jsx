@@ -32,6 +32,7 @@ const Index = (props) => {
                               </div>
                           </div>
                       )) }
+                      
             </div>
           </div>
         </div>
