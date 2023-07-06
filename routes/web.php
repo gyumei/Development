@@ -54,9 +54,7 @@ Route::get('/followers', function() {
     return Inertia::render('Post/Follower');
 });
 
-Route::get('/profiele', function() {
-    return Inertia::render('Post/Profiele');
-});
+Route::get("/profiele", [PostController::class, "profiele"]);
 
 Route::get("/profiele/enroll", [PostController::class, "profiele_enroll"]);
 

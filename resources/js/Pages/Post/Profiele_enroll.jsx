@@ -1,47 +1,59 @@
 import React from "react";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
-import { Link } from '@inertiajs/react';
+import { Link, useForm } from '@inertiajs/react';
+import Header from '@/Components/Post/Header'
 
 const Profiele_enroll = (props) => {
+    const {data, setData} = useForm({
+        age: "",
+        hobby: "",
+        topic: "",
+    })
     
+    const handleSendPosts = (e) => {
+        e.preventDefault();
+        post("/posts");
+    }
     return (
         <>
-            <div class="bg-white py-6 sm:py-8 lg:py-12">
+          <Header auth={props.auth}>
+            Collision
+          </Header>
+            <div class="bg-grey py-6 sm:py-8 lg:py-12">
               <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
                 <div class="mb-10 md:mb-16">
-                  <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">Get in touch</h2>
-            
-                  <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This is a section of some simple filler text, also known as placeholder text. It shares some characteristics of a real written text but is random or otherwise generated.</p>
-                </div>
-                <form class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2">
+                  <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">個人情報を設定してもらいます。</h2>
+                  
+                  </div>
+                <form class="mx-auto grid max-w-screen-md gap-4 sm:grid-cols-2" onSubmit={handleSendPosts}>
                   <div>
-                    <label for="first-name" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">First name*</label>
+                    <label for="first-name" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">名*</label>
                     <input name="first-name" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
                   </div>
             
                   <div>
-                    <label for="last-name" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Last name*</label>
+                    <label for="last-name" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">姓*</label>
                     <input name="last-name" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
                   </div>
             
                   <div class="sm:col-span-2">
-                    <label for="company" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Company</label>
-                    <input name="company" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
+                    <label for="company" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">年齢</label>
+                    <input name="company" onChange={(e) => setData("body", e.target.value)} class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
                   </div>
             
                   <div class="sm:col-span-2">
-                    <label for="email" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Email*</label>
+                    <label for="email" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">メールアドレス*</label>
                     <input name="email" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
                   </div>
             
                   <div class="sm:col-span-2">
-                    <label for="subject" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Subject*</label>
-                    <input name="subject" class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
+                    <label for="subject" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">趣味*</label>
+                    <input name="subject" onChange={(e) => setData("hobby", e.target.value)} class="w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring" />
                   </div>
             
                   <div class="sm:col-span-2">
-                    <label for="message" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">Message*</label>
-                    <textarea name="message" class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"></textarea>
+                    <label for="message" class="mb-2 inline-block text-sm text-gray-800 sm:text-base">興味のあるトピック*</label>
+                    <textarea name="message" onChange={(e) => setData("topic", e.target.value)} class="h-64 w-full rounded border bg-gray-50 px-3 py-2 text-gray-800 outline-none ring-indigo-300 transition duration-100 focus:ring"></textarea>
                   </div>
             
                   <div class="flex items-center justify-between sm:col-span-2">

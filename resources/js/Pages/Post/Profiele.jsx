@@ -4,6 +4,7 @@ import { Link } from '@inertiajs/react';
 import Header from '@/Components/Post/Header'
 
 const Profiele = (props) => {
+      const { id_person } = props;
     
     return (
         <>
@@ -17,20 +18,18 @@ const Profiele = (props) => {
         
               <div class="flex ml-48 flex-col justify-center sm:text-center lg:py-12 lg:text-left xl:w-5/12 xl:py-24">
               
-                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">名前: </p>
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">名前: {id_person.name}</p>
+                
+                 <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">メールアドレス: {id_person.email}</p>
         
-                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">年齢: </p>
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">年齢: {id_person.age}</p>
                 
-                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">メールアドレス: </p>
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">趣味: {id_person.hobby}</p>
                 
-                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">趣味: </p>
-                
-                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">興味のあるトピック: </p>
+                <p class="mb-8 font-semibold text-grey-500 md:mb-6 md:text-lg xl:text-xl">興味のあるトピック: {id_person.topic}</p>
                 
                 <div class="flex flex-col gap-2.5 sm:flex-row sm:justify-center lg:justify-start">
-                  <a href="/profiele/enroll" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">登録</a>
-        
-                  <a href="#" class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">編集</a>
+                  <a href="/profiele/enroll" class="inline-block rounded-lg bg-indigo-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">編集</a>
               </div>
               
               </div>
