@@ -32,14 +32,10 @@ Route::get('/dashboard', function () {
 
 Route::get('/index', [PostController::class, 'index'])->name('index');
 
-
-
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    
     Route::get('/debate', function() {
     return Inertia::render('Post/Debate');
 });
@@ -54,10 +50,9 @@ Route::get('/followers', function() {
     return Inertia::render('Post/Follower');
 });
 
-Route::get("/profiele", [PostController::class, "profiele"]);
+Route::get("/profile", [PostController::class, "profile"])->name('profile');
 
 Route::get("/profiele/enroll", [PostController::class, "profiele_enroll"]);
-
 
 Route::get('/like', function() {
     return Inertia::render('Post/Like');

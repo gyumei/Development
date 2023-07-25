@@ -11,7 +11,7 @@ export default function Header({auth, children}) {
                 <ul class="sm:flex md:flex justify-end md:space-x-16 pr-8 text-green-800">
                 {auth.user ? (
                 <>
-                    <li><Link href="/profiele">プロフィール</Link></li>
+                    <li><Link href="/profile">プロフィール</Link></li>
                     <li><Link href="/follow">フォロー中</Link></li>
                     <li><Link href="/follower">フォロワー</Link></li>
                     <li><Link href="/like">お気に入り</Link></li>
