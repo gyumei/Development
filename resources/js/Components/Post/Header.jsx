@@ -8,6 +8,7 @@ export default function Header({auth, children}) {
                   <a href="/index">Collision</a>
                 </div>
             <nav>
+            
                 <ul class="sm:flex md:flex justify-end md:space-x-16 pr-8 text-green-800">
                 {auth.user ? (
                 <>
